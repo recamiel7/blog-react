@@ -1,0 +1,22 @@
+@import 'utils';
+
+.comment-body {
+  .comment-content {
+    padding: 2rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    background: $oc-gray-2;
+    // 위로 5rem 이동시켜 주어 파란색 배경을 침범하게 합니다.
+    transform: translateY(-5rem); 
+    margin: 0 auto;
+    min-height: 6rem;
+    border-bottom: 1px solid $oc-gray-5;
+    @include material-shadow(5, 0.5);
+
+    // 해상도에 따라 다른 width를 설정합니다.
+    width: 1024px;
+    @include media("<large") { width: 768px; }
+    @include media("<medium") { width: calc(100% - 2rem); }
+  }
+
+}

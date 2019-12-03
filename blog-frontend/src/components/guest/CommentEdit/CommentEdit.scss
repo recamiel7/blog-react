@@ -1,0 +1,23 @@
+@import 'utils';
+
+.edit-body {
+    padding: 2rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    display: flex;
+    flex-direction: row;
+    background: $oc-gray-2;
+    width: 1024px;
+    @include media("<large") { width: 768px; }
+    @include media("<medium") { width: calc(100% - 2rem); }
+    margin: 0 auto;
+    transform: translateY(-5rem); 
+    @include material-shadow(5, 0.5);
+
+  .edit-text {
+    width: 90%;
+    background: white;
+    min-height: 5rem;
+    margin-right: 1rem;
+  }
+}
