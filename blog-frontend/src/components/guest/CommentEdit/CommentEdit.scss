@@ -2,8 +2,8 @@
 
 .edit-body {
     padding: 2rem;
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     display: flex;
     flex-direction: row;
     background: $oc-gray-2;
@@ -15,6 +15,7 @@
     @include material-shadow(5, 0.5);
 
   .edit-text {
+    padding: 0.5rem;
     width: 90%;
     background: white;
     min-height: 5rem;

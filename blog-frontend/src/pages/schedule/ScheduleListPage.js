@@ -6,7 +6,7 @@ import Pagination from 'components/list/Pagination';
 
 const ScheduleListPage = () => {
   return (
-    <PageTemplate>
+    <PageTemplate  type={'schedule'}>
       <ListWrapper  type={'일정 관리 리스트'}>
         <ScheduleList/>
         <Pagination/>

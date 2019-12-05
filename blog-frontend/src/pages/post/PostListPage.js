@@ -6,7 +6,7 @@ import Pagination from 'components/list/Pagination';
 
 const PostListPage = () => {
   return (
-    <PageTemplate>
+    <PageTemplate type={'post'}>
       <ListWrapper type={'게시글 리스트'}>
         <PostList/>
         <Pagination/>

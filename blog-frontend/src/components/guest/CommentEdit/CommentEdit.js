@@ -7,9 +7,8 @@ const cx = classNames.bind(styles);
 
 const CommentEdit = () => (
   <div className={cx('edit-body')}>
-    <div className={cx('edit-text')}>
-      내용
-    </div>
+    <input className={cx('edit-text')} placeholder={'댓글 내용을 입력해 주세요.'}>
+    </input>
     <Button theme="default">댓글 입력</Button>
   </div>
 );
