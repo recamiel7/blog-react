@@ -1,10 +1,14 @@
 import React from 'react';
+import EditorTemplate from 'components/scheduleEditor/EditorTemplate';
+import EditorHeader from 'components/scheduleEditor/EditorHeader';
+import EditorPane from 'components/scheduleEditor/EditorPane';
 
 const ScheduleEditorPage = () => {
   return (
-    <div>
-        ScheduleEditor
-    </div>
+    <EditorTemplate
+      header={<EditorHeader/>}
+      editor={<EditorPane/>}
+    />
   );
 };
 

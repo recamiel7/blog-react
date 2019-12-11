@@ -1,0 +1,13 @@
+@import 'utils';
+
+.editor-template {
+  .panes {
+    height: calc(100vh - 4rem); // 페이지 높이에서 EditorHeader 크기 빼기
+    display: flex;
+    .pane {
+      display: flex;
+      flex: 1;
+      overflow: auto; // 너무 많이 줄이면 스크롤바가 나타나게 해줍니다.
+    }
+  }
+}

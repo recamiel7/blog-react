@@ -1,0 +1,52 @@
+@import 'utils';
+
+.editor-pane {
+  flex: 1; // 자신에게 주어진 영역을 다 채우기
+  // 세로 방향으로 내용 나열
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    background: $oc-gray-7;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    padding: 1rem;
+    color: white;
+    font-weight: 500;
+    &::placeholder {
+      color: rgba(255,255,255,0.75);
+    }
+  }
+
+  .detail-schedule{
+    background: $oc-gray-6;
+    height: 80%;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 1rem;
+    color: white;
+    font-weight: 300;
+
+    &::placeholder {
+      color: rgba(255,255,255,0.75);
+    }
+  }
+
+  .date-editor {
+    flex: 1; // 남는 영역 다 차지하기
+    background: $oc-gray-9;
+    display: flex;
+    flex-direction: row; 
+    padding: 1rem;
+  }
+
+  p{
+    color: $oc-gray-1;
+    margin-top: 0rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  
+}
