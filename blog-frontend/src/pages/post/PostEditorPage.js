@@ -1,15 +1,15 @@
 import React from 'react';
 import EditorTemplate from 'components/postEditor/EditorTemplate';
 import EditorHeader from 'components/postEditor/EditorHeader';
-import EditorPane from 'components/postEditor/EditorPane';
-import PreviewPane from 'components/postEditor/PreviewPane';
+import EditorPaneContainer from 'containers/postEditor/EditorPaneContainer';
+import PreviewPaneContainer from 'containers/postEditor/PreviewPaneContainer';
 
 const PostEditorPage = () => {
   return (
     <EditorTemplate
       header={<EditorHeader/>}
-      editor={<EditorPane/>}
-      preview={<PreviewPane/>}
+      editor={<EditorPaneContainer/>}
+      preview={<PreviewPaneContainer/>}
     />
   );
 };
