@@ -1,4 +1,4 @@
-const shedule = require('models/shedule');
+const Schedule = require('models/schedule');
 const Joi = require('joi');
 
 const { ObjectId } = require('mongoose').Types;
@@ -32,7 +32,8 @@ exports.write = async (ctx) => {
   const schema = Joi.object().keys({
     title: Joi.string().required(), // 뒤에 required를 붙여주면 필수 항목이라는 의미
     body: Joi.string().required(),
-
+    startDate: Joi.date().required(),
+    endDate: Joi.date(),
   });
 
   // 첫 번째 파라미터는 검증할 객체, 두 번째는 스키마
@@ -49,7 +50,7 @@ exports.write = async (ctx) => {
 
   // 새 Schedule 인스턴스를 생성합니다.
   const schedule = new Schedule({
-    title, body
+    title, body, startDate, endDate
   });
 
   try {

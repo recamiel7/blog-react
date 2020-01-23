@@ -11,3 +11,6 @@ codemirror marked prismjs
 # 에러
 ## Could not find "store" in the context of "Connect(~~~
 Root.js => return() 안쪽 Provider로 안 씌움
+
+# mongoDB
+mongod --dbpath D:\react-development-tools\mongoDB
