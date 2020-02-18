@@ -12,13 +12,15 @@ class EditorPaneContainer extends Component {
   }
   
   render() {
-    const { title, markdown } = this.props;
+    const { title, startDate, endDate, markdown } = this.props;
     const { handleChangeInput } = this;
 
     return (
       <EditorPane
         title={title}
         markdown={markdown}
+        startDate={startDate}
+        endDate={endDate}
         onChangeInput={handleChangeInput}
       />
     );
@@ -29,6 +31,8 @@ export default connect(
   (state) => ({
     title: state.scheduleEditor.get('title'),
     markdown: state.scheduleEditor.get('markdown'),
+    startDate: state.scheduleEditor.get('startDate'),
+    endDate: state.scheduleEditor.get('endDate'),
   }),
   (dispatch) => ({
     EditorActions: bindActionCreators(editorActions, dispatch)

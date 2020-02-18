@@ -18,6 +18,8 @@ export const writeSchedule = createAction(WRITE_SCHEDULE, api.writeSchedule);
 const initialState = Map({
   title: '',
   markdown: '',
+  startDate: '',
+  endDate: '',
   scheduleId: null
 });
 
@@ -29,7 +31,7 @@ export default handleActions({
     return state.set(name, value);
   },
   ...pender({
-    type: writeSchedule,
+    type: WRITE_SCHEDULE,
     onSuccess: (state, action) => {
       const { _id } = action.payload.data;
       return state.set('scheduleId', _id);

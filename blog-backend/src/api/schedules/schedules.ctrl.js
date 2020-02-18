@@ -15,13 +15,13 @@ exports.checkObjectId = (ctx, next) => {
   return next(); // next를 리턴해주어야 ctx.body가 제대로 설정됩니다.
 };
 
-exports.checkLogin = (ctx, next) => {
-  if (!ctx.session.logged) {
-    ctx.status = 401; // Unauthorized
-    return null;
-  }
-  return next();
-};
+// exports.checkLogin = (ctx, next) => {
+//   if (!ctx.session.logged) {
+//     ctx.status = 401; // Unauthorized
+//     return null;
+//   }
+//   return next();
+// };
 
 /*
   POST /api/schedules
@@ -33,7 +33,7 @@ exports.write = async (ctx) => {
     title: Joi.string().required(), // 뒤에 required를 붙여주면 필수 항목이라는 의미
     body: Joi.string().required(),
     startDate: Joi.date().required(),
-    endDate: Joi.date(),
+    endDate: Joi.date().required(),
   });
 
   // 첫 번째 파라미터는 검증할 객체, 두 번째는 스키마
@@ -46,7 +46,7 @@ exports.write = async (ctx) => {
     return;
   }
 
-  const { title, body } = ctx.request.body;
+  const { title, body, startDate, endDate } = ctx.request.body;
 
   // 새 Schedule 인스턴스를 생성합니다.
   const schedule = new Schedule({
@@ -86,7 +86,7 @@ exports.list = async (ctx) => {
     const scheduleCount = await Schedule.countDocuments(query).exec();
     const limitBodyLength = schedule => ({
       ...schedule,
-      body: schedule.body.length < 350 ? schedule.body : `${schedule.body.slice(0, 350)}...`
+      body: schedule.body.length < 100 ? schedule.body : `${schedule.body.slice(0, 100)}...`
     });
     ctx.body = schedules.map(limitBodyLength);
     // 마지막 페이지 알려 주기

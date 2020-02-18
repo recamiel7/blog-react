@@ -44,7 +44,7 @@ class EditorPane extends Component {
           <DatePicker
             selected={this.state.startDate}
             onChange={this.startHandleChange}
-            locale="ko"
+            locale={ko}
             showTimeSelect
             timeFormat="HH:mm"
             timeIntervals={10}
@@ -55,7 +55,7 @@ class EditorPane extends Component {
           <DatePicker
             selected={this.state.endDate}
             onChange={this.endHandleChange}
-            locale="ko"
+            locale={ko}
             showTimeSelect
             timeFormat="HH:mm"
             timeIntervals={10}

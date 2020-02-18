@@ -18,15 +18,17 @@ class EditorHeaderContainer extends Component {
   }
 
   handleSubmit = async () => {
-    const { title, markdown, EditorActions, history } = this.props;
+    const { title, markdown, startDate, endDate, EditorActions, history } = this.props;
     const schedule = {
       title,
       body: markdown,
+      startDate,
+      endDate
     };
     try {
       await EditorActions.writeSchedule(schedule);
-      // 페이지를 이동시킵니다. 주의: postId는 상단에서 레퍼런스를 만들지 말고
-      // 이 자리에서 this.props.postId를 조회해 주어야 합니다(현재 값을 불러오기 위함).
+      // 페이지를 이동시킵니다. 주의: scheduleId는 상단에서 레퍼런스를 만들지 말고
+      // 이 자리에서 this.props.scheduleId를 조회해 주어야 합니다(현재 값을 불러오기 위함).
       history.push(`/schedule/${this.props.scheduleId}`);
     } catch (e) {
       console.log(e);
@@ -51,6 +53,8 @@ export default connect(
   (state) => ({
     title: state.scheduleEditor.get('title'),
     markdown: state.scheduleEditor.get('markdown'),
+    startDate: state.scheduleEditor.get('startDate'),
+    endDate: state.scheduleEditor.get('endDate'),
     scheduleId: state.scheduleEditor.get('scheduleId')
   }),
   (dispatch) => ({
